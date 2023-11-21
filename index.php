@@ -23,6 +23,9 @@
 
             <?php endwhile; ?>
         </div>
+
+        <?php dietetique_pagination(); ?>
+
     </div>
 
 <?php else: ?>
