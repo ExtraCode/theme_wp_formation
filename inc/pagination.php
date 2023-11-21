@@ -2,14 +2,27 @@
 // Crée une pagination customisée pour nos articles
 function dietetique_pagination(){ ?>
 
-    <nav aria-label="Pagination articles" class="d-flex justify-content-center">
+    <nav aria-label="Pagination articles" class="d-flex justify-content-center my-5">
         <ul class="pagination">
         <?php 
-            $pages = paginate_links(['type' => 'array']); 
+            $pages = paginate_links(['type' => 'array']);
+            
+            // s'il n'y a pas de pagination
+            if($pages === null){
+                return;
+            }
+            
             foreach($pages as $page){
 
+                $class = 'page-item';
+
+                // si la page en cours contient le mot "current"
+                if(str_contains($page, 'current')){
+                    $class.= ' active';
+                }
+
                 // pour chaque page d'article
-                echo '<li class="page-item">';
+                echo '<li class="'.$class.'">';
                     echo str_replace('page-numbers','page-link',$page);
                 echo '</li>';
 
@@ -17,13 +30,7 @@ function dietetique_pagination(){ ?>
         
         ?>
         </ul>
-        <!--<ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Précedent</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
-        </ul>-->
+        
     </nav>
 
 <?php } ?>

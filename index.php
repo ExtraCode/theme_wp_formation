@@ -11,7 +11,7 @@
                 <div class="col-4">
 
                     <div class="card">
-                        <img src="<?php the_post_thumbnail_url(); ?>" class="card-img-top" style="height: 230px">
+                        <img src="<?php the_post_thumbnail_url('card-header'); ?>" class="card-img-top" style="height: 230px">
                         <div class="card-body">
                             <h5 class="card-title"><?php the_title(); ?></h5>
                             <p class="card-text"><?php the_excerpt(); ?></p>
