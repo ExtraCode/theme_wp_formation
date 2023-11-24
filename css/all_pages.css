@@ -1,0 +1,11 @@
+.icone_post_favori{
+    color: #edc916;
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    font-size: 33px;
+}
+
+.bg-primary-color{
+    background-color: #313C41;
+}

@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-Coucou
+<?php the_content(); ?>
 <?php get_footer(); ?>
